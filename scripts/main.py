@@ -11,7 +11,6 @@ if file:
     xls = pd.ExcelFile(file)
     st.success(f"Abas carregadas: {xls.sheet_names}")
 
-    # Lê e concatena todas as abas
     df_list = []
     for sheet in xls.sheet_names:
         df_temp = xls.parse(sheet)
@@ -20,7 +19,6 @@ if file:
 
     dados = pd.concat(df_list, ignore_index=True)
 
-    # Padroniza os nomes das colunas
     dados.columns = dados.columns.str.strip()
     dados.columns = dados.columns.str.replace(" ", "_")
     dados.columns = dados.columns.str.title()
@@ -28,11 +26,9 @@ if file:
     st.subheader("🔍 Visualização Inicial dos Dados")
     st.dataframe(dados.head())
 
-    # Exibe colunas disponíveis
     st.markdown("### 📌 Colunas disponíveis no DataFrame:")
     st.write(dados.columns.tolist())
 
-    # Colunas esperadas com base no novo layout
     colunas_esperadas = [
         "Total_Price", "Quantity", "Product_Sold",
         "Delivery_Country", "Date_Sold"
@@ -40,7 +36,6 @@ if file:
 
     if all(col in dados.columns for col in colunas_esperadas):
 
-        # Converte data
         dados["Date_Sold"] = pd.to_datetime(dados["Date_Sold"], errors="coerce")
 
         st.markdown("## 📈 Indicadores Gerais")

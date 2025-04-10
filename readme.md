@@ -7,7 +7,7 @@ Este projeto foi desenvolvido para consolidar dados de vendas de múltiplas font
 - Métricas gerais como ticket médio, total de itens e faturamento
 - Apoio à logística e transporte
 
-![upload]()
+![upload](https://github.com/devcaiada/dataset-gamesshop/blob/main/assets/upload%20data.png?raw=true)
 
 ---
 
@@ -76,9 +76,9 @@ openpyxl
 streamlit run C:\Users\yourname\folder\dataset-gamesshop\scripts\main.py
 ```
 
-![view]()
+![view](https://github.com/devcaiada/dataset-gamesshop/blob/main/assets/visualiza%C3%A7%C3%A3o%20dados.png?raw=true)
 
-![kpis]()
+![kpis](https://github.com/devcaiada/dataset-gamesshop/blob/main/assets/KPIs.png?raw=true)
 
 ---
 
